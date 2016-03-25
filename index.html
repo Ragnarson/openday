@@ -3,40 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Ragnarson Open Day</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <style>
-      .timer {
-        font-family: "Lato";
-        font-size: 64px;
-        text-align: center;
-        position: absolute;
-        top: 42%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .timer p {
-        font-size: 24px;
-      }
-
-      .timer img {
-        margin-bottom: 40px;
-        margin-left: 115px;
-        opacity: .2;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="/style.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body>
+  <body data-deadline="2016/04/01 14:00:00">
+    <img class="logo" src="logo.png" alt="Logo">
     <div class="timer">
-      <img src="logo.png" alt="Logo">
       <p>There's still time to finish your Open Day projects!</p>
       <div id="timer"></div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.1.0/jquery.countdown.js"></script>
     <script type="text/javascript">
-      $('#timer').countdown('2015/11/27 14:00:00', function(event) {
+      var deadline = $('body').data('deadline')
+      $('#timer').countdown(deadline, function(event) {
         var totalHours = event.offset.totalDays * 24 + event.offset.hours;
         $(this).html(event.strftime(totalHours + ':%M:%S'));
       });

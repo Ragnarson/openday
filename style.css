@@ -1,0 +1,22 @@
+.timer {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-family: "Lato";
+  font-size: 4rem;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+p {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.logo {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  width: 20%;
+  opacity: .5;
+}
